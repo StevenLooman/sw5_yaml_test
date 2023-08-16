@@ -1,8 +1,5 @@
 name: Lint
 on:
-  push:
-    branches:
-      - main
   pull_request:
     types: [opened, synchronize, reopened]
   workflow_dispatch:
@@ -15,3 +12,12 @@ jobs:
       - uses: DavidAnson/markdownlint-cli2-action@v11
         with:
           globs: '**/*.md'
+  
+  magik_lint:
+    runs-on: ubuntu-latest
+    name: Magiklint
+    steps:
+      - uses: actions/checkout@v3
+      - uses: StevenLooman/action-magik-lint@main
+        id: magik-lint
+        
