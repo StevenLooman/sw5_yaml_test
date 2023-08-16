@@ -1,0 +1,27 @@
+name: Lint push main
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  markdown_lint:
+    name: Markdown Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: DavidAnson/markdownlint-cli2-action@v11
+        with:
+          globs: '**/*.md'
+
+  magik_lint:
+    runs-on: ubuntu-latest
+    name: Magiklint
+    steps:
+      - uses: actions/checkout@v3
+      - id: magik-lint
+        uses: StevenLooman/github-action-magik-lint@main
+        with:
+          magik_tools_version: 0.7.1
+          reporter: github-check
+          filter_mode: nofilter
