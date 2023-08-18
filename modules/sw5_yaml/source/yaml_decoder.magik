@@ -79,7 +79,8 @@ _pragma(classify_level=basic, topic={yaml})
 _private _method yaml_decoder.parse_stream(stream)
 	## Parse input stream.
 	## @param {myaml:yaml_input_stream} stream Input stream.
-	## @return {sw:char16_vector|sw:concurrent_hash_map|sw:rope|sw:unset} Parsed YAML document, or unset if stream was empty.
+	## @return {sw:char16_vector|sw:concurrent_hash_map|sw:rope|sw:unset} Parsed YAML document,
+	##                                                                    or unset if stream was empty.
 	.tokenizer << yaml_tokenizer.new(stream)
 	_for token _over .tokenizer.tokens()
 	_loop
