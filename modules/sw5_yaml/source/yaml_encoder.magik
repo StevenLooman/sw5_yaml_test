@@ -89,6 +89,7 @@ _private _method yaml_encoder.encode_data(data, _optional first_requires_indent?
 	## @param {sw:char16_vector|sw:externally_keyed_collection_mixin|sw:indexed_collection_mixin} data
 	## @param {sw:false} first_requires_indent?
 	## @param {sw:false} flow_style?
+	write("Lint me now!")
 	_if data _is _unset
 	_then
 		_self.encode_null(data, first_requires_indent?, flow_style?)

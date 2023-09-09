@@ -18,5 +18,5 @@ jobs:
     name: Magiklint
     steps:
       - uses: actions/checkout@v3
-      - uses: StevenLooman/action-magik-lint@main
+      - uses: StevenLooman/github-action-magik-lint@main
         id: magik-lint
