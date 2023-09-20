@@ -13,15 +13,15 @@ jobs:
       - uses: DavidAnson/markdownlint-cli2-action@v11
         with:
           globs: '**/*.md'
-  
+
   magik_lint:
     runs-on: ubuntu-latest
     name: Magiklint
     steps:
       - uses: actions/checkout@v3
-      - uses: StevenLooman/action-magik-lint@main
-        id: magik-lint
+      - id: magik-lint
+        uses: StevenLooman/github-action-magik-lint@main
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          magik_tools_version: 0.7.1
           reporter: github-check
           filter_mode: nofilter

@@ -12,11 +12,13 @@ jobs:
       - uses: DavidAnson/markdownlint-cli2-action@v11
         with:
           globs: '**/*.md'
-  
-  magik_lint:
+
+magik_lint:
     runs-on: ubuntu-latest
     name: Magiklint
     steps:
       - uses: actions/checkout@v3
-      - uses: StevenLooman/github-action-magik-lint@main
-        id: magik-lint
+      - id: magik-lint
+        uses: StevenLooman/github-action-magik-lint@main
+        with:
+          magik_tools_version: 0.7.1
