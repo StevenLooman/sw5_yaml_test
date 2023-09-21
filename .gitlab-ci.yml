@@ -7,7 +7,7 @@ stages:
 magik-lint:
   stage: lint
   script:
-    - apk add --no-cache curl=8.2.1-r0 openjdk17-jre-headless=17.0.8_p7-r0 git=2.40.1-r0
+    - apk add --no-cache curl=8.2.1-r0 openjdk17-jre-headless=17.0.8_p7-r0
     - mkdir -p /tmp/magik-lint
     - curl -sfL -o /tmp/magik-lint/magik-lint-0.7.1.jar https://github.com/StevenLooman/magik-tools/releases/download/0.7.1/magik-lint-0.7.1.jar
     - mkdir -p /tmp/reviewdog
