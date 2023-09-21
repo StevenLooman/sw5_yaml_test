@@ -13,7 +13,7 @@ jobs:
         with:
           globs: '**/*.md'
 
-magik_lint:
+  magik_lint:
     runs-on: ubuntu-latest
     name: Magiklint
     steps:
